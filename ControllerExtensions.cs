@@ -21,6 +21,11 @@ public static class ControllerExtensions
             // Find the partial view by its name and the current controller context.
             ViewEngineResult viewResult = ViewEngines.Engines.FindPartialView(controller.ControllerContext, viewName);
  
+            if (viewResult.View == null)
+            {
+              throw new ArgumentException(string.Format("Could not find the view with the specified name '{0}'.", viewName), "viewName");
+            }
+ 
             // Create a view context.
             var viewContext = new ViewContext(controller.ControllerContext, viewResult.View, controller.ViewData, controller.TempData, sw);
  
