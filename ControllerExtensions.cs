@@ -1,4 +1,3 @@
-```csharp
 public static class ControllerExtensions
 {
     /// <summary>
@@ -32,4 +31,3 @@ public static class ControllerExtensions
         }
     }
 }
-```
